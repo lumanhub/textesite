@@ -1,115 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Central de Entretenimento</title>
-<link rel="stylesheet" href="style.css">
+<title>Plataforma Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Inter, sans-serif;
+background:#07070a;
+color:white;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1,h2{
+margin:0 0 10px 0;
+}
+
+.btn{
+padding:14px 20px;
+border-radius:30px;
+font-weight:700;
+text-decoration:none;
+display:inline-block;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#31FF8A,#00D7B8);
+color:#06110b;
+}
+
+.btn-secondary{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.price-card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+padding:25px;
+position:relative;
+transition:0.2s;
+}
+
+.price-card:hover{
+transform:translateY(-4px);
+}
+
+.price{
+font-size:42px;
+font-weight:900;
+margin:15px 0;
+}
+
+.ribbon{
+position:absolute;
+top:15px;
+right:15px;
+background:rgba(49,255,138,0.2);
+padding:6px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:700;
+}
+
+.price-card--highlight{
+background:linear-gradient(180deg,rgba(49,255,138,0.12),rgba(0,215,184,0.05));
+border-color:rgba(49,255,138,0.4);
+box-shadow:0 20px 80px rgba(0,255,170,0.15);
+}
+
+ul{
+padding-left:18px;
+color:#cfcfcf;
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="overlay"></div>
+<div class="container">
 
-  <div class="hero-content">
-    <h1>Tudo o que você gosta de assistir, em um só lugar</h1>
-    <p>Uma plataforma moderna para quem busca praticidade e variedade no entretenimento.</p>
-    <a href="#cta" class="btn">Quero acessar agora</a>
-  </div>
-</header>
+<h1>Planos de acesso</h1>
+<p>Escolha o plano ideal para você. Todos incluem suporte e acesso completo.</p>
 
-<section class="benefits">
+<div class="pricing">
 
-<h2>Por que escolher nossa plataforma?</h2>
+<div class="price-card">
+<h3>Quinzenal</h3>
+<p>Ideal para testar</p>
 
-<div class="grid">
+<div class="price">R$15</div>
 
-<div class="card">
-Interface simples e intuitiva
+<ul>
+<li>Acesso por 15 dias</li>
+<li>Uso em até 3 dispositivos</li>
+<li>Suporte via WhatsApp</li>
+</ul>
+
+<a class="btn btn-secondary">Escolher plano</a>
 </div>
 
-<div class="card">
-Compatível com vários dispositivos
+<div class="price-card">
+<h3>Mensal</h3>
+<p>Plano popular</p>
+
+<div class="price">R$30</div>
+
+<ul>
+<li>Acesso por 30 dias</li>
+<li>Uso em até 3 dispositivos</li>
+<li>Suporte via WhatsApp</li>
+</ul>
+
+<a class="btn btn-secondary">Escolher plano</a>
 </div>
 
-<div class="card">
-Conteúdos organizados em um só ambiente
+<div class="price-card">
+<h3>Semestral</h3>
+<p>Mais economia</p>
+
+<div class="price">R$150</div>
+
+<ul>
+<li>Acesso por 6 meses</li>
+<li>+1 mês grátis</li>
+<li>Suporte via WhatsApp</li>
+</ul>
+
+<a class="btn btn-secondary">Escolher plano</a>
 </div>
 
-<div class="card">
-Atualizações frequentes
-</div>
+<!-- PLANO RECOMENDADO -->
 
-</div>
+<div class="price-card price-card--highlight">
 
-</section>
+<div class="ribbon">RECOMENDADO</div>
 
-<section class="steps">
+<h3>Anual</h3>
+<p>Máxima economia</p>
 
-<h2>Como funciona</h2>
+<div class="price">R$300</div>
 
-<div class="grid">
+<ul>
+<li>Acesso por 12 meses</li>
+<li><strong>+2 meses grátis</strong></li>
+<li>Suporte prioritário</li>
+<li>Melhor custo-benefício</li>
+</ul>
 
-<div class="card">
-<strong>1️⃣ Solicite acesso</strong>
-<p>Entre em contato e receba todas as informações.</p>
-</div>
+<a class="btn btn-primary">Escolher plano anual</a>
 
-<div class="card">
-<strong>2️⃣ Receba instruções</strong>
-<p>Você recebe passo a passo simples e rápido.</p>
-</div>
-
-<div class="card">
-<strong>3️⃣ Aproveite</strong>
-<p>Comece a usar imediatamente com total praticidade.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="testimonials">
-
-<h2>O que nossos usuários dizem</h2>
-
-<div class="grid">
-
-<div class="card">
-<p>"Simplesmente incrível! Muito fácil de usar."</p>
-<span>— Carlos M.</span>
-</div>
-
-<div class="card">
-<p>"Organizado e funciona perfeitamente."</p>
-<span>— Juliana R.</span>
-</div>
-
-<div class="card">
-<p>"Melhor experiência que já tive."</p>
-<span>— Rafael S.</span>
 </div>
 
 </div>
 
-</section>
-
-<section id="cta" class="cta">
-
-<h2>Pronto para acessar?</h2>
-
-<p>Clique no botão abaixo e fale conosco.</p>
-
-<a href="https://wa.me/5500000000000" class="btn">
-Falar no WhatsApp
-</a>
-
-</section>
-
-<footer>
-© 2026 Central de Entretenimento — Todos os direitos reservados
-</footer>
+</div>
 
 </body>
 </html>
