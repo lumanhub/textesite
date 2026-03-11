@@ -1,179 +1,366 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plataforma Premium</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sua Plataforma | Acesso Premium</title>
+  <meta
+    name="description"
+    content="Entretenimento via internet com instalação guiada, teste gratuito e planos flexíveis."
+  />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-<style>
-
-body{
-margin:0;
-font-family:Inter, sans-serif;
-background:#07070a;
-color:white;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-h1,h2{
-margin:0 0 10px 0;
-}
-
-.btn{
-padding:14px 20px;
-border-radius:30px;
-font-weight:700;
-text-decoration:none;
-display:inline-block;
-}
-
-.btn-primary{
-background:linear-gradient(135deg,#31FF8A,#00D7B8);
-color:#06110b;
-}
-
-.btn-secondary{
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.15);
-}
-
-.pricing{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.price-card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:20px;
-padding:25px;
-position:relative;
-transition:0.2s;
-}
-
-.price-card:hover{
-transform:translateY(-4px);
-}
-
-.price{
-font-size:42px;
-font-weight:900;
-margin:15px 0;
-}
-
-.ribbon{
-position:absolute;
-top:15px;
-right:15px;
-background:rgba(49,255,138,0.2);
-padding:6px 10px;
-border-radius:20px;
-font-size:12px;
-font-weight:700;
-}
-
-.price-card--highlight{
-background:linear-gradient(180deg,rgba(49,255,138,0.12),rgba(0,215,184,0.05));
-border-color:rgba(49,255,138,0.4);
-box-shadow:0 20px 80px rgba(0,255,170,0.15);
-}
-
-ul{
-padding-left:18px;
-color:#cfcfcf;
-}
-
-</style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-
 <body>
+  <div class="bg" aria-hidden="true">
+    <div class="grain"></div>
+    <div class="grid"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+  </div>
 
-<div class="container">
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="logo">SUA<span>PLATAFORMA</span></a>
 
-<h1>Planos de acesso</h1>
-<p>Escolha o plano ideal para você. Todos incluem suporte e acesso completo.</p>
+      <nav class="menu">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-<div class="pricing">
+      <a href="#planos" class="btn btn-primary btn-small">Ver planos</a>
+    </div>
+  </header>
 
-<div class="price-card">
-<h3>Quinzenal</h3>
-<p>Ideal para testar</p>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="dot"></span>
+          <span>Ao vivo + sob demanda • via internet • acesso rápido</span>
+        </div>
 
-<div class="price">R$15</div>
+        <h1>
+          Entretenimento com
+          <span class="accent">qualidade</span>,
+          <span class="accent">estabilidade</span>
+          e praticidade.
+        </h1>
 
-<ul>
-<li>Acesso por 15 dias</li>
-<li>Uso em até 3 dispositivos</li>
-<li>Suporte via WhatsApp</li>
-</ul>
+        <p>
+          Uma plataforma com instalação guiada, uso simples e
+          <strong>teste gratuito de 4 horas</strong> para você validar antes
+          de assinar.
+        </p>
 
-<a class="btn btn-secondary">Escolher plano</a>
-</div>
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20o%20teste%20gratuito%20de%204%20horas."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pedir teste gratuito
+          </a>
 
-<div class="price-card">
-<h3>Mensal</h3>
-<p>Plano popular</p>
+          <a class="btn btn-secondary" href="#como-funciona">
+            Ver como funciona
+          </a>
+        </div>
 
-<div class="price">R$30</div>
+        <div class="hero-proof">
+          <div class="proof-card">
+            <strong>4h</strong>
+            <span>teste gratuito</span>
+          </div>
+          <div class="proof-card">
+            <strong>3</strong>
+            <span>simultâneos</span>
+          </div>
+          <div class="proof-card">
+            <strong>2 + 1</strong>
+            <span>IPTV + P2P</span>
+          </div>
+        </div>
+      </div>
 
-<ul>
-<li>Acesso por 30 dias</li>
-<li>Uso em até 3 dispositivos</li>
-<li>Suporte via WhatsApp</li>
-</ul>
+      <aside class="hero-box">
+        <div class="glass-card">
+          <h3>O que você recebe</h3>
+          <p>Uma experiência premium, direta e sem complicação.</p>
 
-<a class="btn btn-secondary">Escolher plano</a>
-</div>
+          <ul class="check-list">
+            <li>Canais ao vivo pela internet</li>
+            <li>Conteúdos sob demanda</li>
+            <li>Instalação guiada</li>
+            <li>Até 3 acessos simultâneos</li>
+            <li>Teste gratuito de 4 horas</li>
+          </ul>
 
-<div class="price-card">
-<h3>Semestral</h3>
-<p>Mais economia</p>
+          <a
+            class="btn btn-primary btn-full"
+            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20receber%20o%20teste%20gratuito%20de%204%20horas."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solicitar no WhatsApp
+          </a>
+        </div>
+      </aside>
+    </section>
 
-<div class="price">R$150</div>
+    <section id="beneficios" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Por que essa experiência é melhor?</h2>
+          <p>
+            Tudo foi pensado para ser simples, visualmente forte e fácil de usar
+            no dia a dia.
+          </p>
+        </div>
 
-<ul>
-<li>Acesso por 6 meses</li>
-<li>+1 mês grátis</li>
-<li>Suporte via WhatsApp</li>
-</ul>
+        <div class="cards-grid">
+          <article class="info-card">
+            <div class="icon">✦</div>
+            <h3>Interface limpa</h3>
+            <p>Você encontra o que quer com rapidez e sem bagunça visual.</p>
+          </article>
 
-<a class="btn btn-secondary">Escolher plano</a>
-</div>
+          <article class="info-card">
+            <div class="icon">⚡</div>
+            <h3>Instalação guiada</h3>
+            <p>Você recebe orientação para configurar do jeito certo.</p>
+          </article>
 
-<!-- PLANO RECOMENDADO -->
+          <article class="info-card">
+            <div class="icon">◎</div>
+            <h3>Uso simultâneo</h3>
+            <p>Até 3 dispositivos ao mesmo tempo dentro do limite do acesso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="price-card price-card--highlight">
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como funciona</h2>
+          <p>Você fala comigo, testa, valida e só depois escolhe o plano.</p>
+        </div>
 
-<div class="ribbon">RECOMENDADO</div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>Contato</h3>
+            <p>Você chama no WhatsApp e recebe as orientações iniciais.</p>
+          </article>
 
-<h3>Anual</h3>
-<p>Máxima economia</p>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>Instalação</h3>
+            <p>Você instala o aplicativo compatível no seu dispositivo.</p>
+          </article>
 
-<div class="price">R$300</div>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>Teste gratuito</h3>
+            <p>É liberado um teste de 4 horas para validar a experiência.</p>
+          </article>
 
-<ul>
-<li>Acesso por 12 meses</li>
-<li><strong>+2 meses grátis</strong></li>
-<li>Suporte prioritário</li>
-<li>Melhor custo-benefício</li>
-</ul>
+          <article class="step-card">
+            <span class="step-number">04</span>
+            <h3>Assinatura</h3>
+            <p>Depois do teste, você escolhe o plano ideal para o seu uso.</p>
+          </article>
+        </div>
 
-<a class="btn btn-primary">Escolher plano anual</a>
+        <div class="disclaimer">
+          Importante: utilize apenas conteúdos e aplicativos oficiais/licenciados
+          e respeite as regras do seu dispositivo.
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section id="planos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Planos de acesso</h2>
+          <p>O plano anual fica como a melhor recomendação pelo custo-benefício.</p>
+        </div>
 
-</div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Quinzenal</h3>
+            <p class="plan-subtitle">Pra começar leve</p>
+            <div class="price">R$15</div>
+            <div class="period">/15 dias</div>
 
-</div>
+            <ul>
+              <li>Acesso por 15 dias</li>
+              <li>Ideal para testar</li>
+              <li>Upgrade a qualquer momento</li>
+            </ul>
 
+            <a
+              class="btn btn-secondary btn-full"
+              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20quinzenal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escolher
+            </a>
+          </article>
+
+          <article class="price-card">
+            <h3>Mensal</h3>
+            <p class="plan-subtitle">Equilíbrio perfeito</p>
+            <div class="price">R$30</div>
+            <div class="period">/mês</div>
+
+            <ul>
+              <li>Acesso por 30 dias</li>
+              <li>Consistência sem pesar</li>
+              <li>Suporte via WhatsApp</li>
+            </ul>
+
+            <a
+              class="btn btn-secondary btn-full"
+              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20mensal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escolher
+            </a>
+          </article>
+
+          <article class="price-card">
+            <h3>Semestral</h3>
+            <p class="plan-subtitle">Mais economia</p>
+            <div class="price">R$150</div>
+            <div class="period">/6 meses</div>
+
+            <ul>
+              <li>Acesso semestral</li>
+              <li>+1 mês grátis</li>
+              <li>Ótimo para longo prazo</li>
+            </ul>
+
+            <a
+              class="btn btn-secondary btn-full"
+              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20semestral."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escolher
+            </a>
+          </article>
+
+          <article class="price-card highlight">
+            <div class="recommended">RECOMENDADO</div>
+
+            <h3>Anual</h3>
+            <p class="plan-subtitle">Máximo custo-benefício</p>
+            <div class="price">R$300</div>
+            <div class="period">/ano</div>
+
+            <ul>
+              <li>Acesso por 12 meses</li>
+              <li><strong>+2 meses grátis</strong></li>
+              <li>Melhor custo-benefício</li>
+              <li>Prioridade no suporte</li>
+            </ul>
+
+            <a
+              class="btn btn-primary btn-full"
+              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20anual."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escolher anual
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Respostas rápidas e diretas.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Funciona em quais TVs?</summary>
+            <p>Funciona em TVs com WebOS, Tizen, Roku e Android, além de celulares.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Precisa baixar aplicativo?</summary>
+            <p>Sim. Em TVs, você usa o app compatível da loja do sistema. Em outros dispositivos, o app indicado no acesso.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Dá para usar em mais de um dispositivo?</summary>
+            <p>Sim. Até 3 simultâneos: 1 P2P e 2 IPTV.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Como recebo o teste gratuito?</summary>
+            <p>Após contato por WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Quer o teste gratuito de 4 horas?</h2>
+            <p>Me chama no WhatsApp e eu te guio na instalação.</p>
+          </div>
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20o%20teste%20gratuito%20de%204%20horas."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a
+    class="float-whatsapp"
+    href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20mais%20informacoes%20sobre%20os%20planos."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+  >
+    WhatsApp
+  </a>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Sua Plataforma</p>
+      <p>Visual premium, limpo e direto.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
