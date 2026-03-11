@@ -4,19 +4,597 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sua Plataforma | Acesso Premium</title>
-  <meta
-    name="description"
-    content="Entretenimento via internet com instalação guiada, teste gratuito e planos flexíveis."
-  />
+  <meta name="description" content="Entretenimento via internet com instalação guiada, teste gratuito e planos flexíveis." />
+  <meta name="theme-color" content="#07070a" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    :root {
+      --bg: #07070a;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.10);
+      --text: rgba(255, 255, 255, 0.94);
+      --muted: rgba(255, 255, 255, 0.72);
+      --muted-2: rgba(255, 255, 255, 0.58);
+      --accent: #31ff8a;
+      --accent-2: #00d7b8;
+      --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+      --radius-lg: 28px;
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at 50% 18%, rgba(0,0,0,1), rgba(0,0,0,0));
+      -webkit-mask-image: radial-gradient(circle at 50% 18%, rgba(0,0,0,1), rgba(0,0,0,0));
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.10;
+      background-image: radial-gradient(rgba(255,255,255,0.12) 0.5px, transparent 0.5px);
+      background-size: 8px 8px;
+    }
+
+    .blob {
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.22;
+      animation: floatGlow 12s ease-in-out infinite;
+    }
+
+    .blob1 {
+      background: var(--accent);
+      top: -180px;
+      left: -180px;
+    }
+
+    .blob2 {
+      background: var(--accent-2);
+      top: 120px;
+      right: -220px;
+      animation-duration: 14s;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-18px) scale(1.04); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 7, 10, 0.62);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .menu a {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-small {
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #05110b;
+      box-shadow: 0 16px 50px rgba(0, 215, 184, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.12);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 80px 0 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 22px rgba(49,255,138,0.45);
+    }
+
+    .hero h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .accent {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-proof {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .proof-card {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .proof-card span {
+      display: block;
+      color: var(--muted-2);
+      font-size: 13px;
+      margin-top: 4px;
+      font-weight: 700;
+    }
+
+    .glass-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .glass-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .glass-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .cards-grid,
+    .steps-grid,
+    .pricing-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .step-card,
+    .price-card,
+    .faq-item,
+    .cta-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .info-card,
+    .step-card,
+    .price-card {
+      padding: 22px;
+      transition: 0.2s ease;
+    }
+
+    .info-card:hover,
+    .step-card:hover,
+    .price-card:hover {
+      transform: translateY(-3px);
+      background: var(--panel-2);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .info-card h3,
+    .step-card h3,
+    .price-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .info-card p,
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    .disclaimer {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .price-card {
+      position: relative;
+    }
+
+    .plan-subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.04em;
+    }
+
+    .period {
+      color: var(--muted-2);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .price-card ul {
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      display: grid;
+      gap: 10px;
+      line-height: 1.55;
+    }
+
+    .highlight {
+      background: linear-gradient(180deg, rgba(49,255,138,0.12), rgba(0,215,184,0.06));
+      border-color: rgba(49,255,138,0.35);
+      box-shadow: 0 20px 80px rgba(0,255,170,0.12);
+    }
+
+    .recommended {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(49,255,138,0.14);
+      border: 1px solid rgba(49,255,138,0.28);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+    }
+
+    .faq-item {
+      padding: 14px 16px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-item p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .cta-section {
+      padding-top: 20px;
+    }
+
+    .cta-box {
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      margin: 0 0 8px;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      padding: 13px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #05110b;
+      font-weight: 900;
+      box-shadow: 0 18px 60px rgba(0, 215, 184, 0.22);
+    }
+
+    .footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted-2);
+    }
+
+    @media (max-width: 980px) {
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-grid,
+      .steps-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .cards-grid,
+      .steps-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .float-whatsapp {
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 14px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg" aria-hidden="true">
@@ -58,23 +636,12 @@
 
         <p>
           Uma plataforma com instalação guiada, uso simples e
-          <strong>teste gratuito de 4 horas</strong> para você validar antes
-          de assinar.
+          <strong>teste gratuito de 4 horas</strong> para você validar antes de assinar.
         </p>
 
         <div class="hero-actions">
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20o%20teste%20gratuito%20de%204%20horas."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Pedir teste gratuito
-          </a>
-
-          <a class="btn btn-secondary" href="#como-funciona">
-            Ver como funciona
-          </a>
+          <a class="btn btn-primary" href="#planos">Ver planos</a>
+          <a class="btn btn-secondary" href="#como-funciona">Ver como funciona</a>
         </div>
 
         <div class="hero-proof">
@@ -93,7 +660,7 @@
         </div>
       </div>
 
-      <aside class="hero-box">
+      <aside>
         <div class="glass-card">
           <h3>O que você recebe</h3>
           <p>Uma experiência premium, direta e sem complicação.</p>
@@ -106,14 +673,7 @@
             <li>Teste gratuito de 4 horas</li>
           </ul>
 
-          <a
-            class="btn btn-primary btn-full"
-            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20receber%20o%20teste%20gratuito%20de%204%20horas."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Solicitar no WhatsApp
-          </a>
+          <a class="btn btn-primary btn-full" href="#cta">Solicitar agora</a>
         </div>
       </aside>
     </section>
@@ -122,10 +682,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Por que essa experiência é melhor?</h2>
-          <p>
-            Tudo foi pensado para ser simples, visualmente forte e fácil de usar
-            no dia a dia.
-          </p>
+          <p>Tudo foi pensado para ser simples, visualmente forte e fácil de usar no dia a dia.</p>
         </div>
 
         <div class="cards-grid">
@@ -184,8 +741,7 @@
         </div>
 
         <div class="disclaimer">
-          Importante: utilize apenas conteúdos e aplicativos oficiais/licenciados
-          e respeite as regras do seu dispositivo.
+          Importante: utilize apenas conteúdos e aplicativos oficiais/licenciados e respeite as regras do seu dispositivo.
         </div>
       </div>
     </section>
@@ -203,21 +759,12 @@
             <p class="plan-subtitle">Pra começar leve</p>
             <div class="price">R$15</div>
             <div class="period">/15 dias</div>
-
             <ul>
               <li>Acesso por 15 dias</li>
               <li>Ideal para testar</li>
               <li>Upgrade a qualquer momento</li>
             </ul>
-
-            <a
-              class="btn btn-secondary btn-full"
-              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20quinzenal."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Escolher
-            </a>
+            <a class="btn btn-secondary btn-full" href="#cta">Escolher</a>
           </article>
 
           <article class="price-card">
@@ -225,21 +772,12 @@
             <p class="plan-subtitle">Equilíbrio perfeito</p>
             <div class="price">R$30</div>
             <div class="period">/mês</div>
-
             <ul>
               <li>Acesso por 30 dias</li>
               <li>Consistência sem pesar</li>
               <li>Suporte via WhatsApp</li>
             </ul>
-
-            <a
-              class="btn btn-secondary btn-full"
-              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20mensal."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Escolher
-            </a>
+            <a class="btn btn-secondary btn-full" href="#cta">Escolher</a>
           </article>
 
           <article class="price-card">
@@ -247,46 +785,27 @@
             <p class="plan-subtitle">Mais economia</p>
             <div class="price">R$150</div>
             <div class="period">/6 meses</div>
-
             <ul>
               <li>Acesso semestral</li>
               <li>+1 mês grátis</li>
               <li>Ótimo para longo prazo</li>
             </ul>
-
-            <a
-              class="btn btn-secondary btn-full"
-              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20semestral."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Escolher
-            </a>
+            <a class="btn btn-secondary btn-full" href="#cta">Escolher</a>
           </article>
 
           <article class="price-card highlight">
             <div class="recommended">RECOMENDADO</div>
-
             <h3>Anual</h3>
             <p class="plan-subtitle">Máximo custo-benefício</p>
             <div class="price">R$300</div>
             <div class="period">/ano</div>
-
             <ul>
               <li>Acesso por 12 meses</li>
               <li><strong>+2 meses grátis</strong></li>
               <li>Melhor custo-benefício</li>
               <li>Prioridade no suporte</li>
             </ul>
-
-            <a
-              class="btn btn-primary btn-full"
-              href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20escolher%20o%20plano%20anual."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Escolher anual
-            </a>
+            <a class="btn btn-primary btn-full" href="#cta">Escolher anual</a>
           </article>
         </div>
       </div>
@@ -323,7 +842,7 @@
       </div>
     </section>
 
-    <section class="section cta-section">
+    <section id="cta" class="section cta-section">
       <div class="container">
         <div class="cta-box">
           <div>
@@ -331,28 +850,13 @@
             <p>Me chama no WhatsApp e eu te guio na instalação.</p>
           </div>
 
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20o%20teste%20gratuito%20de%204%20horas."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Falar no WhatsApp
-          </a>
+          <a class="btn btn-primary" href="#">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
   </main>
 
-  <a
-    class="float-whatsapp"
-    href="https://wa.me/55SEU_NUMERO_AQUI?text=Quero%20mais%20informacoes%20sobre%20os%20planos."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar no WhatsApp"
-  >
-    WhatsApp
-  </a>
+  <a class="float-whatsapp" href="#">WhatsApp</a>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -361,6 +865,8 @@
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
